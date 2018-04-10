@@ -2,5 +2,6 @@ import * as mathTrig  from './math-trig';
 
 export let {
     ABS,
-    ACOS
+    ACOS,
+    ACOSH
 } = mathTrig;
