@@ -1,4 +1,4 @@
-import {ArgsError} from "./error";
+import {ArgsError} from './error';
 
 export default function (fnEvaluate: Function, opts: Object = {}) 
 {

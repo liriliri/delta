@@ -11,7 +11,9 @@
                 "avoid-escape"
             ]
         },
+        "space-before-function-paren": false,
         "one-line": false,
+        "only-arrow-functions": false,
         "no-trailing-whitespace": false
     },
     "rulesDirectory": []
