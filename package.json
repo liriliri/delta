@@ -1,0 +1,39 @@
+{
+  "name": "delta",
+  "version": "1.0.0",
+  "description": "Excel formula functions",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
+    "lint": "tslint src/**/*.ts",
+    "test": "mocha test/*.js"
+  },
+  "eustia": {
+    "files": "src/**/*.ts",
+    "output": "src/lib/util.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liriliri/delta.git"
+  },
+  "keywords": [
+    "excel",
+    "formula"
+  ],
+  "author": "redhoodsu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liriliri/delta/issues"
+  },
+  "homepage": "https://github.com/liriliri/delta#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.5",
+    "ts-loader": "^4.2.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
+  }
+}
