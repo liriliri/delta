@@ -10,7 +10,8 @@ let {
     abs,
     acos,
     log,
-    sqrt
+    sqrt,
+    atan
 } = Math;
 
 export let ABS = createFn(function (num: number | string): number
@@ -48,6 +49,18 @@ export let ACOSH = createFn(function (num: number | string): number
     if (num < 1.0) throw new NumberError();
 
     return log(num + sqrt(num * num - 1.0));
+}, {
+    minArgs: 1,
+    maxArgs: 1
+});
+
+export let ACOT = createFn(function (num: number | string): number 
+{
+    num = toDouble(num);
+
+    if (isNaN(num)) throw new ValueError();
+
+    return atan(1 / num);
 }, {
     minArgs: 1,
     maxArgs: 1

@@ -5,7 +5,8 @@ const delta = require('../dist/delta');
 let {
     ABS,
     ACOS,
-    ACOSH
+    ACOSH,
+    ACOT
 } = delta;
 
 describe('Math & Trig', function ()
@@ -37,5 +38,13 @@ describe('Math & Trig', function ()
         expect(() => ACOSH()).to.throw();
         expect(() => ACOSH(1, 2)).to.throw();
         expect(() => ACOSH(-100)).to.throw();
+    });
+
+    it('ACOT', function () 
+    {
+        expect(ACOT(1)).to.closeTo(0.7853981633974483, 1e-9);
+        expect(ACOT('1')).to.closeTo(0.7853981633974483, 1e-9);
+        expect(() => ACOT()).to.throw();
+        expect(() => ACOT(1, 2)).to.throw();
     });
 });
