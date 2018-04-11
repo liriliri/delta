@@ -6,7 +6,8 @@ let {
     ABS,
     ACOS,
     ACOSH,
-    ACOT
+    ACOT,
+    ACOTH
 } = delta;
 
 describe('Math & Trig', function ()
@@ -46,5 +47,14 @@ describe('Math & Trig', function ()
         expect(ACOT('1')).to.closeTo(0.7853981633974483, 1e-9);
         expect(() => ACOT()).to.throw();
         expect(() => ACOT(1, 2)).to.throw();
+    });
+
+    it('ACOTH', function () 
+    {
+        expect(ACOTH(2)).to.closeTo(0.549306144, 1e-9);
+        expect(ACOTH('2')).to.closeTo(0.549306144, 1e-9);
+        expect(() => ACOTH(0)).to.throw();
+        expect(() => ACOTH()).to.throw();
+        expect(() => ACOTH(1, 2)).to.throw();
     });
 });

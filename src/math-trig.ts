@@ -65,3 +65,16 @@ export let ACOT = createFn(function (num: number | string): number
     minArgs: 1,
     maxArgs: 1
 });
+
+export let ACOTH = createFn(function (num: number | string): number 
+{
+    num = toDouble(num);
+
+    if (isNaN(num)) throw new ValueError();
+    if (num >= -1 && num <= 1) throw new NumberError();
+
+    return 0.5 * log((num + 1) / (num - 1));
+}, {
+    minArgs: 1,
+    maxArgs: 1
+});

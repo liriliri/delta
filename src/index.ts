@@ -4,5 +4,6 @@ export let {
     ABS,
     ACOS,
     ACOSH,
-    ACOT
+    ACOT,
+    ACOTH
 } = mathTrig;
