@@ -3,15 +3,22 @@ import {
     ValueError,
     NumberError
 } from './error';
-import {isNaN} from './lib/util';
-import {toDouble} from './convertor';
+import {
+    isNaN,
+    isNil
+} from './lib/util';
+import {
+    toDouble,
+    toResult
+} from './convertor';
 
 let {
     abs,
     acos,
     log,
     sqrt,
-    atan
+    atan,
+    floor
 } = Math;
 
 export let ABS = createFn(function (num: number | string): number
@@ -20,7 +27,7 @@ export let ABS = createFn(function (num: number | string): number
 
     if (isNaN(num)) throw new ValueError();
 
-    return abs(num);
+    return toResult(abs(num));
 }, {
     minArgs: 1,
     maxArgs: 1 
@@ -34,7 +41,7 @@ export let ACOS = createFn(function (num: number | string): number
 
     if (num < -1.0 || num > 1.0) throw new NumberError();
 
-    return acos(num);
+    return toResult(acos(num));
 }, {
     minArgs: 1,
     maxArgs: 1
@@ -48,7 +55,7 @@ export let ACOSH = createFn(function (num: number | string): number
 
     if (num < 1.0) throw new NumberError();
 
-    return log(num + sqrt(num * num - 1.0));
+    return toResult(log(num + sqrt(num * num - 1.0)));
 }, {
     minArgs: 1,
     maxArgs: 1
@@ -194,9 +201,16 @@ export let GCD = createFn(function ()
 
 });
 
-export let INT = createFn(function () 
+export let INT = createFn(function (num: string): number 
 {
+    let ret = parseFloat(num);
 
+    if (isNil(ret) || isNaN(ret)) throw new ValueError();
+
+    return floor(ret);
+}, {
+    minArgs: 1,
+    maxArgs: 1
 });
 
 export let LCM = createFn(function () 

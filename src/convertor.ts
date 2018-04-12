@@ -7,9 +7,12 @@ import {
     isStr,
     trim,
     last,
-    isBool
+    isBool,
 } from './lib/util';
-import {InvalidCastError} from './error';
+import {
+    InvalidCastError,
+    NumberError
+} from './error';
 
 export function toDouble(val: any): number
 {
@@ -46,6 +49,13 @@ export function toDouble(val: any): number
 
     return ret;
 }
+
+export function toResult(val: number): number 
+{
+    if (isNaNOrInfinite(val)) throw new NumberError();
+
+    return val;
+} 
 
 function isNaNOrInfinite(val: any): boolean 
 {

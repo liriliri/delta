@@ -7,7 +7,8 @@ let {
     ACOS,
     ACOSH,
     ACOT,
-    ACOTH
+    ACOTH,
+    INT
 } = delta;
 
 describe('Math & Trig', function ()
@@ -56,5 +57,14 @@ describe('Math & Trig', function ()
         expect(() => ACOTH(0)).to.throw();
         expect(() => ACOTH()).to.throw();
         expect(() => ACOTH(1, 2)).to.throw();
+    });
+
+    it('INT', function () 
+    {
+        expect(INT(2.5)).to.equal(2);
+        expect(INT('2.5')).to.equal(2);
+        expect(() => INT()).to.throw();
+        expect(() => INT(1, 2)).to.throw();
+        expect(() => INT('abc')).to.throw();
     });
 });

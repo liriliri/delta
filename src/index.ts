@@ -6,7 +6,8 @@ export let {
     ACOS,
     ACOSH,
     ACOT,
-    ACOTH
+    ACOTH,
+    INT
 } = mathTrig;
 
 export let {
