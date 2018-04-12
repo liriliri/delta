@@ -1,4 +1,5 @@
 import * as mathTrig  from './math-trig';
+import * as convertor from './convertor';
 
 export let {
     ABS,
@@ -7,3 +8,7 @@ export let {
     ACOT,
     ACOTH
 } = mathTrig;
+
+export let {
+    toDouble
+} = convertor;

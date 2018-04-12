@@ -27,3 +27,13 @@ export class NumberError extends Error
         this.message = 'number';
     }
 }
+
+export class InvalidCastError extends Error 
+{
+    constructor(...args: any[]) 
+    {
+        super(...args);
+
+        this.message = 'invalidCast';
+    }
+}

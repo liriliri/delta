@@ -4,7 +4,7 @@ import {
     NumberError
 } from './error';
 import {isNaN} from './lib/util';
-import {toDouble} from './convert';
+import {toDouble} from './convertor';
 
 let {
     abs,
